@@ -1,0 +1,30 @@
+{
+  "name": "sdrbot",
+  "version": "1.0.0",
+  "description": "A small Super Dice Roll Bot for Discord servers",
+  "main": "SDRBot.js",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "roll": "^1.2.0",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiyonari/SDRBot.git"
+  },
+  "keywords": [
+    "rpg",
+    "dice roll",
+    "discord"
+  ],
+  "author": "Rémi Sezille",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kiyonari/SDRBot/issues"
+  },
+  "homepage": "https://github.com/Kiyonari/SDRBot#readme"
+}
