@@ -1,36 +1,36 @@
-randomInt = require('./getRandomInt.js')
+const randomInt = require('./getRandomInt.js')
 const {prefix, token} = require('./config.json');
-var Roll = require('roll');
+const Logger = require("@elian-wonhalf/pretty-logger");
+const Roll = require('roll');
 
 const roll = new Roll();
 
-module.exports =   {  
-    diceRoll: function (message) {
-        command = message.content.slice(prefix.length + 2).split();
-        epur = message.content.slice(prefix.length + 2).split(' ').join('').toLowerCase();
-        sender = message.author.tag.split('#')
+function diceRoll(message) {
+    command = message.content.slice(prefix.length + 2).split();
+    epur = message.content.slice(prefix.length + 2).split(' ').join('').toLowerCase();
 
-        console.log(command);
-        try {
-            dice = roll.roll(`${epur}`);
-            message.channel.send({
-                embed: {
-                    color: randomInt.getRandomInt(16777214),  //random color between one and 16777214 (dec)
-                    title: `**${sender[0]}** :game_die:`,
-                    description: `${command[0]} > **${dice.result}**`
-                }
-            });
-            console.log(`I rolled dices for : ${message.author.tag}`)
-        }
-        catch (err) {
-            console.log(err);
-            message.channel.send({
-                embed: {
-                    color: 1,
-                    title: ':x:',
-                }
-            });
-        }
+    console.log(command);
+    try {
+        let dice = roll.roll(`${epur}`);
+
+        message.channel.send({
+            embed: {
+                color: randomInt.getRandomInt(16777214),  //random color between one and 16777214 (dec)
+                title: `**${message.author.username}** :game_die:`,
+                description: `${command[0]} > **${dice.result}**`
+            }
+        });
+        Logger.info(`I rolled dices for : ${message.author.username} score: ${dice.result}`)
     }
-
+    catch (err) {
+        Logger.exception(err);
+        message.channel.send({
+            embed: {
+                color: 1,
+                title: ':x:',
+            }
+        });
+    }
 }
+
+module.exports =   {diceRoll}
