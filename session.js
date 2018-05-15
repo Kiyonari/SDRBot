@@ -34,8 +34,7 @@ function nextSession(message) {
     date = command[1];
     time = command[2];    
     
-    if (!date || !time)
-    {
+    if (!date || !time){
         message.channel.send("Il me manque un truc là.. Il me faut une date et une heure (YYYY-MM-DD hh:mm:ss)");
         return;
     }
@@ -44,6 +43,7 @@ function nextSession(message) {
         return false;
     }
     message.guild.channels.find('name', 'boite-a-pizza').setTopic(`Prochaine séance : ${date} ${time}`).catch(Logger.exception);
+    message.guild.channels.find('name', 'boite-a-pizza').send(`@everyone J'ai modifié la date de la prochaine séance! Elle aura lieu le **${date}** à **${time}**`).catch(Logger.exception);
 }
 
 
