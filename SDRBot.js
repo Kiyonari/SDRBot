@@ -1,13 +1,10 @@
-const randomInt = require('./getRandomInt.js')
-
 const Discord = require('discord.js');
-const Dice = require('./diceRoll.js')
-const Session = require('./session.js')
-var Roll = require('roll');
+
+const Dice = require('./functions/diceRoll')
+const Session = require('./functions/session')
 
 const {prefix, token} = require('./config.json');
 
-const roll = new Roll();
 const client = new Discord.Client()
 
 client.on('ready', () =>  console.log(`I am logged as ${client.user.tag} and ready!`));
