@@ -11,7 +11,7 @@ function diceRoll(message) {
 
     console.log(command);
     try {
-        let dice = roll.roll(`${epur}`);
+        let dice = roll.roll(epur);
 
         message.channel.send({
             embed: {
