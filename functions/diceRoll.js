@@ -1,5 +1,5 @@
 const randomInt = require('./getRandomInt.js')
-const {prefix, token} = require('../config/config.json');
+const prefix = require('../config/config.json').prefix;
 const Logger = require("@elian-wonhalf/pretty-logger");
 const Roll = require('roll');
 
