@@ -1,4 +1,4 @@
-const {prefix, token} = require('./config.json');
+const {prefix, token} = require('../config/config.json');
 const Logger = require("@elian-wonhalf/pretty-logger");
 
 dict = {

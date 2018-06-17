@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const Dice = require('./functions/diceRoll')
 const Session = require('./functions/session')
 
-const {prefix, token} = require('./config.json');
+const {prefix, token} = require('./config/config.json');
 
 const client = new Discord.Client()
 
